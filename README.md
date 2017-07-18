@@ -33,7 +33,9 @@
 
 >>ThreadPool：线程池的应用。
 >>>CachedThreadPool：创建任意线程
+
 >>>FixedThreadPool：固定数量的线程
+
 >>>SingleThreadExecutor：创建单一线程
 
 >>buyTicket：购票模拟
