@@ -17,20 +17,16 @@ public class FixedThreadPool {
         for(int i=1; i<=10; i++){
             final int taskId = i;
             threadPool.execute(new Runnable(){
-
                 public void run() {
                     for(int i=1; i<=10; i++){
                         System.out.println(Thread.currentThread().getName() + " is looping of " + i + " the task is " + taskId);
                         try {
                             Thread.sleep(1000);
                         } catch (InterruptedException e) {
-                            // TODO Auto-generated catch block
                             e.printStackTrace();
                         }
-
                     }
                 }
-
             });
         }
         System.out.println("add  all of 10 task");
