@@ -1,8 +1,12 @@
 package testMap;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class EntryMap {
 	private Map<Integer, Integer> map = new HashMap<Integer, Integer>();
@@ -29,7 +33,17 @@ public class EntryMap {
 		entryMap.entrySet();
 		// TODO 3.遍历map通过iterator
 		System.out.println("4.遍历map通过iterator==========================");
-		entryMap.entrySetByIterator();;
+		entryMap.entrySetByIterator();
+
+
+		Map<Integer,Object> str = new HashMap<>();
+		for (int i = 1; i < 6; i++) {
+			str.put(i, 11 - i);
+		}
+		Set<Integer> set = str.keySet();
+		List<Object> list = new ArrayList<>(str.values());
+		Set<Map.Entry<Integer,Object>> set2 = str.entrySet();
+        System.out.println();
 	}
 
 	// 遍历key
