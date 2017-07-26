@@ -23,8 +23,12 @@ public class test {
 
 		Integer a = new Integer(100);
 		Integer b = new Integer(100);
+		Integer c = 100;
 		System.out.println(a == b);
 		String str = new String("100");
+		String str3 = "100";
+		System.out.println(a.equals(str));
+		System.out.println(c.equals(str3));
 		System.out.println(a.equals(Integer.valueOf(str)));
 
 		long startTime = 0;
@@ -78,6 +82,9 @@ public class test {
 		Set<Object> set = map.keySet();
 		Collection<Object> list4 =  map.values();
 		System.out.println(set);
+
+
+		List<String> listttt = new ArrayList<String>(10);
 	}
 
 }
