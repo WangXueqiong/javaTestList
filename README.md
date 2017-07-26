@@ -48,3 +48,7 @@
 >>ThreadMain:线程创建的几种方式
 
 >>ThreadWaitNotify：线程wait以及notify测试
+
+>testPAIXU：排序算法
+
+>>QuickSort：快速排序算法
