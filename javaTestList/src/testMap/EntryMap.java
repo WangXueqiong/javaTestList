@@ -13,8 +13,8 @@ public class EntryMap {
 
 	//初始化map
 	public void initMap() {
-		for (int i = 1; i < 6; i++) {
-			map.put(i, 11 - i);
+		for (int i = 1; i < 8; i++) {
+			map.put(i, 22 - i);
 		}
 	}
 

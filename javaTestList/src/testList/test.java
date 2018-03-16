@@ -85,6 +85,23 @@ public class test {
 
 
 		List<String> listttt = new ArrayList<String>(10);
-	}
+
+
+		Map<String,Object> mmmm = new HashMap<>();
+		mmmm.put("A","a");
+        mmmm.put("B","b");
+        mmmm.put("C","c");
+        mmmm.put("D","d");
+        System.out.println(mmmm.get("A"));
+        System.out.println(mmmm.get("F"));
+        if(mmmm.get("A") != null){
+            System.out.println("ok");
+        }
+        if(mmmm.get("F") != null){
+            System.out.println("ok2");
+        }else{
+            System.out.println("欧克");
+        }
+    }
 
 }
