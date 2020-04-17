@@ -2,10 +2,23 @@ package api;
 
 import org.apache.axis.client.Call;
 import org.apache.axis.client.Service;
+import org.apache.axis.constants.Style;
+import org.apache.axis.constants.Use;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.rmi.RemoteException;
+
+import javax.xml.namespace.QName;
+import javax.xml.rpc.ServiceException;
 
 public class api {
 
     public static void main(String[] args){
+        api2();
+    }
+
+    private static void api1(){
         String result = "";
         try {
             String endpoint = "http://211.153.22.29:8091/scms_sin/services/UserPermissionWebService";
@@ -37,4 +50,27 @@ public class api {
         }
     }
 
+    private static void api2(){
+        String namespace = "http://loushang.ws";
+        String result = "";
+        String msgId = "ff80808167aaa21b0167aaa353110003";
+        try {
+            Service service = new Service();
+            Call call = (Call) service.createCall();
+            call.setTargetEndpointAddress(new URL(
+                    "http://smartedu.gsedu.cn/uum/services/updateMsgActionStatus.updateMsgActionStatus"));
+            call.setOperationStyle(Style.RPC);
+            call.setOperationUse(Use.LITERAL);
+            call.setOperationName(new QName(namespace, "updateMsgActionStatus"));
+            Object obj = call.invoke(new Object[] {msgId });
+            result = (String) obj;
+            System.out.println(result);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
 }
