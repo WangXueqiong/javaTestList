@@ -18,7 +18,7 @@ import java.util.concurrent.CountDownLatch;
 public class createThread {
     public static void main(String [] args) {
         //countDownLatch计数2个
-        CountDownLatch countDownLatch = new CountDownLatch(2);
+        final CountDownLatch countDownLatch = new CountDownLatch(2);
 
         Runnable myRunnable1 = new Runnable(){
             @Override

@@ -1,8 +1,9 @@
 package testList;
 
+import org.apache.commons.lang3.RandomStringUtils;
+
 import java.util.Random;
 
-import org.apache.commons.lang.RandomStringUtils;
 
 public class testRandom {
 	public static void main(String[] args){
