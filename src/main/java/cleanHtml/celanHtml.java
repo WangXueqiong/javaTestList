@@ -115,20 +115,29 @@ public class celanHtml {
          <sub></sub>
          <sup></sup>
          MathML
+
+         new.css 1042 .exambox .examTitle>span
+                 1174 .subjectBox .fl .examTitle>span
+
+
          *
          */
-
-        String str = "下列各关系中，不是函数关系的是（ &nbsp; &nbsp;)<span class=\"mathquill-embedded-latex edui-formula-active\" style=\"width: 30px; height: 39px;\">^1/_2</span><span id=\"_baidu_bookmark_start_0\" style=\"display: none; line-height: 0px;\">\u200D</span>";
+        String str = "下列各关系中，<sub>a</sub>不是函数关系的是（ &nbsp; &nbsp;) \n" +
+                "<br><span class=\"mathquill-embedded-latex edui-formula-active\">^1/_2</span><span>\u200D</span>";
+        str = StringEscapeUtils.unescapeHtml4(str);
         Whitelist whitelist =new Whitelist();
         // 保留换行
         whitelist.addTags("br");
+        // 保留h5部分标签
+        whitelist.addTags("sub");
+        whitelist.addTags("sup");
         // 保留图片
         whitelist.addAttributes("img", "src");
         // 保留公式编辑器的样式
         whitelist.addAttributes("span","class","mathquill-embedded-latex");
         String clean = Jsoup.clean(str, whitelist);
         System.out.println(clean);
-        clean = StringEscapeUtils.unescapeHtml4(clean);
+        clean = StringEscapeUtils.escapeHtml4(clean);
         System.out.println(clean);
     }
 }
